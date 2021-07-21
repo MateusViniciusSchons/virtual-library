@@ -3,7 +3,10 @@ body {
 }
 
 .page-content {
-    background-color: rgb(56, 61, 68);
+    background-color: rgb(61, 65, 62);
+    /*rgb(56, 61, 68)
+    rgb(38, 110, 110)
+    */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,7 +19,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 120px;
-    color: #ece7e7;
+    color: #f1e7e7;
 }
 
 .books {
@@ -26,9 +29,6 @@ body {
     align-items: center;
     align-content: center;
     row-gap: 20px;
-}
-
-.book-card-body {
 }
 
 .book-title, .book-author, .book-company, .book-pages-count {
@@ -63,9 +63,19 @@ body {
 
 .pagination-controls {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 30px;
+}
+
+.btn-new {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 220px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
 }
 
 @media screen and (max-width: 1550px) {

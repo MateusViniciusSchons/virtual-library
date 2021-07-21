@@ -24,6 +24,7 @@
         </div>
         <div class="pagination-controls">
             {{$books->links()}}
+            <button type="button" class="btn btn-success btn-new">Cadastrar livro</button>
         </div>
 
     </section>
