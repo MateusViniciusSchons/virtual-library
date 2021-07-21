@@ -6,4 +6,5 @@
 
 3- Rode o comando "php artisan key:generate" no terminal estando na pasta raíz do projeto.
 
-4- 
+4- Crie uma base de dados chamada "virtual_library" no seu MySQL.
+
