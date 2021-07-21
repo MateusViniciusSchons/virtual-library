@@ -23,7 +23,7 @@ class CreateBooksTable extends Migration
             $table->string("publishing_company", 150);
             $table->string("author", 100);
             $table->integer("pages_count");
-            $table->boolean("deleted");
+            $table->boolean("deleted")->default(false);
             $table->timestamps();
         });
     }
