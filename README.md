@@ -8,4 +8,10 @@
 
 4- Crie uma base de dados chamada "virtual_library" no seu MySQL.
 
-5- Rode o comando "php artisan migrate" na pasta raíz do projeto.
+5- Rode o comando "composer install" na pasta raíz do projeto.
+
+6- Rode o comando "php artisan migrate" na pasta raíz do projeto.
+
+7- Rode o comando "npm install" na pasta raíz do projeto.
+
+8- Rode o comando "npm run dev" na pasta raíz do projeto.
