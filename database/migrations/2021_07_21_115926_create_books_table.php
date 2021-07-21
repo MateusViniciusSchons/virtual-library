@@ -19,9 +19,11 @@ class CreateBooksTable extends Migration
 
             $table->id();
             $table->string("title");
+            $table->string("slug");
             $table->string("publishing_company", 150);
             $table->string("author", 100);
             $table->integer("pages_count");
+            $table->boolean("deleted");
             $table->timestamps();
         });
     }
