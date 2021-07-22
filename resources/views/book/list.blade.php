@@ -1,6 +1,16 @@
 @extends('base/head')
 @section('content')
-    <section class="page-content">
+<section class="page-content">
+        @if(session('success-message'))
+            <div class="alert alert-success">
+                <p>{{session('success-message')}}</p>
+            </div>
+        @elseif(session('error-message'))
+            <div class="alert alert-warning">
+                <p>{{session('error-message')}}</p>
+            </div>
+        @endif
+        
         <h1 class="title">Livros da Biblioteca</h1>
 
         <div class="books">
@@ -24,9 +34,9 @@
         </div>
         <div class="pagination-controls">
             {{$books->links()}}
-            <button type="button" class="btn btn-success btn-new">Cadastrar livro</button>
+            <a href="{{ route('books.create') }}" class="btn btn-success btn-new">Cadastrar livro</a>
         </div>
-
+        
     </section>
     
 @stop

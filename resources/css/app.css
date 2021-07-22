@@ -1,7 +1,3 @@
-body {
-    background-color: #18BAF0;
-}
-
 .page-content {
     background-color: rgb(61, 65, 62);
     /*rgb(56, 61, 68)
@@ -76,6 +72,31 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 25px;
+}
+
+.book-form {
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    align-self: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.book-form-title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.book-form-input {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 1550px) {
