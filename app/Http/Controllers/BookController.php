@@ -53,15 +53,9 @@
             $author = $request->input('autor');
             $publishingCompany = $request->input('editora');
             $pagesCount = $request->input('páginas');
-            $slug = Str::of($title)->slug('-');
+            $slug = $this->getNextAvailableSlug($title);
             try {
 
-                $results = DB::select("SELECT count(id) AS slugs_count FROM books WHERE slug LIKE :slug", ['slug' => $slug."%"]);
-                $slugsCount = $results[0]->slugs_count;
-
-                if($slugsCount > 0) {
-                    $slug = $slug."-$slugsCount";
-                }
                 DB::insert("INSERT INTO books (title, author, publishing_company, pages_count, slug) VALUES (?, ?, ?, ?, ?)",
                 [$title, $author, $publishingCompany, $pagesCount, $slug]);
 
@@ -94,15 +88,8 @@
             $author = $request->input('autor');
             $publishingCompany = $request->input('editora');
             $pagesCount = $request->input('páginas');
-            $slug = Str::of($title)->slug('-');
+            $slug = $this->getNextAvailableSlug($title);
             try {
-
-                $results = DB::select("SELECT count(id) AS slugs_count FROM books WHERE slug LIKE :slug", ['slug' => $slug."%"]);
-                $slugsCount = $results[0]->slugs_count;
-
-                if($slugsCount > 0) {
-                    $slug = $slug."-$slugsCount";
-                }
 
                 DB::update("UPDATE books SET title = ?, author = ?, publishing_company = ?, pages_count = ?, slug = ? WHERE id = ?",
                 [$title, $author, $publishingCompany, $pagesCount, $slug, $id]);
@@ -121,6 +108,21 @@
                 return redirect()->route('books.list')->with('success-message', 'Livro deletado!');
             } catch (\Illuminate\Database\QueryException $ex) {
                 return redirect()->route('books.list')->with('error-message', 'Não foi possível deletar o livro, tente novamente!');
+            }
+        }
+
+        private function getNextAvailableSlug($title) {
+            try {
+                $slug = Str::of($title)->slug('-');
+                $results = DB::select("SELECT count(id) AS slugs_count FROM books WHERE slug LIKE :slug", ['slug' => $slug."%"]);
+                $slugsCount = $results[0]->slugs_count;
+
+                if($slugsCount > 0) {
+                    $slug = $slug."-$slugsCount";
+                }
+                return $slug;
+            } catch(\Illuminate\Database\QueryException $ex) {
+                return redirect()->route('books.list')->with('error-message', 'Não foi possível criar um slug para o livro, tente novamente!');
             }
         }
     }
