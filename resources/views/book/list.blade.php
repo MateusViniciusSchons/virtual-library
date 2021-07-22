@@ -24,7 +24,7 @@
                         <p class="card-text book-company">Editora: {{$book->publishing_company}}.</p>
                         <p class="card-text book-pages-count">Possui {{$book->pages_count}} páginas.</p>
                         <div class="links-section">
-                            <a href="#" class="card-link see-more-button">Ver mais</a>
+                            <a href="{{ route('books.show', ['slug' => $book->slug]) }}" class="card-link see-more-button">Ver mais</a>
                             <div class="options-group">
                                 <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="card-link change-button">Alterar</a>
                                 

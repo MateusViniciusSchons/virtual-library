@@ -17,6 +17,20 @@
             ]);
         }
 
+        public function show($slug) {
+            try {
+                $book = DB::select('SELECT * FROM books WHERE slug = ? LIMIT 1', [$slug]);
+                if($book) {
+                    return view('book.show', ['book' => $book[0]]);
+                }
+
+                return redirect()->route('books.list')->with('error-message', 'Não foi possível encontrar o livro!');
+            
+            } catch(\Illuminate\Database\QueryException $ex) {
+                return redirect()->route('books.list')->with('error-message', 'Não foi possível encontrar o livro!');
+            }
+        }
+
         public function create() {
             return view('book.create');
         }

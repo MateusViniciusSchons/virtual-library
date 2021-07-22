@@ -38,6 +38,28 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.book-details-links-section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.book-details-links-section .change-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    align-self: center;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.book-details-links-section .change-button:hover {
+    color: #e26221;
+    background-color: #f3ddd2;
+}
 
 .links-section a {
     font-family: 'Roboto', sans-serif;
@@ -45,8 +67,16 @@
     text-decoration: none;
 }
 
+.btn-goback {
+    margin-right: auto;
+}
+
 .see-more-button {
     color: #18BAF0;
+}
+
+.see-more-button:hover {
+    color: #15afe2;
 }
 
 .change-button {
@@ -74,6 +104,19 @@
     font-size: 25px;
 }
 
+.book-details {
+    width: 90%;
+    max-width: 800px;
+    align-self: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.book-details-property {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
 .book-form {
     width: 90%;
     max-width: 800px;
@@ -83,7 +126,7 @@
     padding: 20px;
 }
 
-.book-form-title {
+.book-form-title, .book-details-title {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
