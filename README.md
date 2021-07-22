@@ -1,5 +1,7 @@
 # Passos Para Rodar o Projeto
 
+    Depois de clonar o repositório e entrar na pasta virtual-library, siga os passos abaixo.
+
 1- Mude as informações "DB_USERNAME" e "DB_PASSWORD" no arquivo .env.example para as suas credenciais de acesso ao mysql.
 
 2- Renomeie o arquivo .env.example para somente .env
