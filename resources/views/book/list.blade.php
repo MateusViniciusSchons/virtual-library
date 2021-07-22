@@ -22,7 +22,7 @@
                                     <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="card-link change-button">Alterar</a>
                                     
                                     <!-- Abrir janela de confirmação para deletar -->
-                                    <a type="button" class="card-link delete-button" data-bs-toggle="modal" data-bs-target="#modal-{{$book->title}}">
+                                    <a type="button" class="card-link delete-button" data-bs-toggle="modal" data-bs-target="#modal-{{$book->slug}}">
                                         Deletar
                                     </a>
 
