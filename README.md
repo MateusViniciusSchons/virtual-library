@@ -1,3 +1,8 @@
+# Detalhes do Projeto
+- Esta é uma aplicação que gerencia de forma básica a lista de livros de uma biblioteca, deixando criar, alterar, deletar, listar e ver detalhes dos produtos.
+- Ela é responsiva e utiliza Media Queries do CSS para isso.
+- Para mostrar detalhes de um livro, a aplicação utiliza um slug único para cada livro para a URL do navegador ficar mais elegante para o usuário.
+
 # Passos Para Rodar o Projeto
 
   Depois de clonar o repositório e entrar na pasta virtual-library, siga os passos abaixo.
