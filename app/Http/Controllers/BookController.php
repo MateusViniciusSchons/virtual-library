@@ -11,7 +11,7 @@
 
     class BookController extends controller {
         public function index() {
-            $books = DB::table('books')->simplePaginate(6);
+            $books = Book::where('deleted', '=', false)->simplePaginate(6);
             return view('book.list', [
                 'books' => $books
             ]);
