@@ -1,5 +1,7 @@
 @extends('base/head')
+@include('book.partials.messages')
 @section('content')
+    @yield('messages')
     <section class="page-content">
         <div class="book-details card">
             <h1 class="book-details-title">Detalhes do Livro</h1>

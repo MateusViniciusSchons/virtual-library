@@ -59,7 +59,7 @@
                 DB::insert("INSERT INTO books (title, author, publishing_company, pages_count, slug) VALUES (?, ?, ?, ?, ?)",
                 [$title, $author, $publishingCompany, $pagesCount, $slug]);
 
-                return redirect()->route('books.list')->with('success-message', 'Livro criado!');
+                return redirect()->route('books.show', ['slug' => $slug])->with('success-message', 'Livro criado!');
 
             } catch(\Illuminate\Database\QueryException $ex) {
                 return redirect()->route('books.list')->with('error-message', 'Não foi possível criar o livro, tente novamente!');
@@ -94,7 +94,7 @@
                 DB::update("UPDATE books SET title = ?, author = ?, publishing_company = ?, pages_count = ?, slug = ? WHERE id = ?",
                 [$title, $author, $publishingCompany, $pagesCount, $slug, $id]);
 
-                return redirect()->route('books.list')->with('success-message', 'Livro alterado!');
+                return redirect()->route('books.show', ['slug' => $slug])->with('success-message', 'Livro alterado!');
 
             } catch(\Illuminate\Database\QueryException $ex) {
                 return redirect()->route('books.list')->with('error-message', 'Não foi possível alterar o livro, tente novamente!');

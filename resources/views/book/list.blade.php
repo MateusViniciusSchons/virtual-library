@@ -1,20 +1,10 @@
 @extends('base/head')
 @include('book.partials.empty-list')
+@include('book.partials.messages')
 
 @section('content')
 <section class="page-content">
-        @if(session('success-message'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{session('success-message')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @elseif(session('error-message'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{session('error-message')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        
+        @yield('messages')
         <h1 class="title">Livros da Biblioteca</h1>
 
         @if(count($books) > 0)
