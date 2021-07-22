@@ -11,10 +11,16 @@
 
     class BookController extends controller {
         public function index() {
-            $books = Book::where('deleted', '=', false)->simplePaginate(6);
-            return view('book.list', [
-                'books' => $books
-            ]);
+            try {
+                $books = Book::where('deleted', '=', false)->simplePaginate(6);
+                return view('book.list', [
+                    'books' => $books
+                ]);
+            } catch(\Illuminate\Database\QueryException $ex) {
+                return view('book.list', [
+                    'books' => []
+                ]);
+            }
         }
 
         public function show($slug) {
