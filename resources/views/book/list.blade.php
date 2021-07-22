@@ -24,7 +24,7 @@
                         <div class="links-section">
                             <a href="#" class="card-link see-more-button">Ver mais</a>
                             <div class="options-group">
-                                <a href="#" class="card-link change-button">Alterar</a>
+                                <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="card-link change-button">Alterar</a>
                                 <a href="#" class="card-link delete-button">Deletar</a>
                             </div>
                         </div>
