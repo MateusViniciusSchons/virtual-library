@@ -1,5 +1,5 @@
 .page-content {
-    background-color: rgb(61, 65, 62);
+    background-color: rgb(235, 235, 235);
     /*rgb(56, 61, 68)
     rgb(38, 110, 110)
     */
@@ -15,7 +15,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 120px;
-    color: #f1e7e7;
+    color: #302f2f;
 }
 
 .books {
@@ -99,9 +99,21 @@
     justify-content: space-between;
 }
 
+.alert {
+    position: fixed !important;
+    padding: 1rem 1rem !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    width: 80% !important;
+    top: 10px !important;
+    z-index: 10 !important;
+    left: 0 !important;
+}
+
 @media screen and (max-width: 1550px) {
     .title {
         font-size: 100px;
+        margin-top: 100px;
     }
 
     .books {
@@ -129,8 +141,7 @@
 
 @media screen and (max-width: 850px) {
     .title {
-        font-size: 50px;
-        margin-top: 20px;
+        font-size: 45px;
     }
 
     .books {

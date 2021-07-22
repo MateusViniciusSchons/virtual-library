@@ -94,5 +94,13 @@
             }
         }
 
-        
+        public function destroy($id) {
+            try {
+                DB::update('UPDATE books SET deleted = ? WHERE id = ?', [true, $id]);
+
+                return redirect()->route('books.list')->with('success-message', 'Livro deletado!');
+            } catch (\Illuminate\Database\QueryException $ex) {
+                return redirect()->route('books.list')->with('error-message', 'Não foi possível deletar o livro, tente novamente!');
+            }
+        }
     }

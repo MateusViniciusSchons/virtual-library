@@ -2,12 +2,14 @@
 @section('content')
 <section class="page-content">
         @if(session('success-message'))
-            <div class="alert alert-success">
-                <p>{{session('success-message')}}</p>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('success-message')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @elseif(session('error-message'))
-            <div class="alert alert-warning">
-                <p>{{session('error-message')}}</p>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{session('error-message')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         
@@ -25,7 +27,35 @@
                             <a href="#" class="card-link see-more-button">Ver mais</a>
                             <div class="options-group">
                                 <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="card-link change-button">Alterar</a>
-                                <a href="#" class="card-link delete-button">Deletar</a>
+                                
+                                <!-- Abrir janela de confirmação para deletar -->
+                                <a type="button" class="card-link delete-button" data-bs-toggle="modal" data-bs-target="#modal-{{$book->title}}">
+                                    Deletar
+                                </a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-{{$book->title}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Deletar livro</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Tem certeza que deseja deletar o livro {{$book->title}}?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">cancelar</button>
+                                        <form action="{{ route('books.destroy', ['id' => $book->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger">Deletar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -34,7 +64,11 @@
         </div>
         <div class="pagination-controls">
             {{$books->links()}}
-            <a href="{{ route('books.create') }}" class="btn btn-success btn-new">Cadastrar livro</a>
+            <a href="{{ route('books.create') }}" >
+                <button class="btn btn-success btn-new">
+                    Cadastrar livro
+                </button>
+            </a>
         </div>
         
     </section>
