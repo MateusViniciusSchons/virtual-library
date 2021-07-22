@@ -18,6 +18,6 @@
 
 8- Rode o comando "npm run dev" na pasta raíz do projeto.
 
-9- Rode o comando "php artisan serve" na pasta raíz do projeto.
+9- Em outra linha de comando, rode o comando "php artisan serve" na pasta raíz do projeto.
 
 10- Acesse a aplicação em "http:127.0.0.1:8000" em seu navegador.
