@@ -153,6 +153,17 @@
     left: 0 !important;
 }
 
+.empty-list {
+    width: 90%;
+    max-width: 1000px;
+    align-self: center;
+}
+
+.empty-list-text {
+    font-family: 'Roboto', sans-serif;
+    text-indent: 24px;
+}
+
 @media screen and (max-width: 1550px) {
     .title {
         font-size: 100px;
