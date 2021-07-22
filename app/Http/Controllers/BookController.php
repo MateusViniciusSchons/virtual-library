@@ -19,7 +19,7 @@
 
         public function show($slug) {
             try {
-                $book = DB::select('SELECT * FROM books WHERE slug = ? LIMIT 1', [$slug]);
+                $book = DB::select('SELECT * FROM books WHERE slug = ? AND deleted = ? LIMIT 1', [$slug, false]);
                 if($book) {
                     return view('book.show', ['book' => $book[0]]);
                 }
