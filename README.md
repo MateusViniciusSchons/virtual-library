@@ -6,11 +6,11 @@
 
 2- Renomeie o arquivo .env.example para somente .env
 
-3- Rode o comando "php artisan key:generate" no terminal estando na pasta raíz do projeto.
+3- Rode o comando "composer install" na pasta raíz do projeto.
 
-4- Crie uma base de dados chamada "virtual_library" no seu MySQL.
+4- Rode o comando "php artisan key:generate" no terminal estando na pasta raíz do projeto.
 
-5- Rode o comando "composer install" na pasta raíz do projeto.
+5- Crie uma base de dados chamada "virtual_library" no seu MySQL.
 
 6- Rode o comando "php artisan migrate" na pasta raíz do projeto.
 
